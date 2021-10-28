@@ -1,7 +1,18 @@
+"""
+    Program that calculates percentage breakdown of SLP earnings.
+    Has a user interface to provide options such as opening a data file,
+    adding data manually, saving data, and deleting data.
+    Please install pycoingecko first.
+    Link: https://pypi.org/project/pycoingecko/
+
+    [1] Needs a function to check if total percentage is 100%.
+"""
+
 import os
 import math
 import time
 from datetime import datetime
+from pycoingecko import CoinGeckoAPI
 
 def is_float(string):
     """
@@ -166,7 +177,7 @@ while (is_running):
             key_value = float(input("Percentage: "))
             data.update({key_name : key_value})
 
-            # insert function to check if percentage is 100%
+            # suggestion [1] code here
 
             decision = input("Add (Y/N)? ").lower()
 
