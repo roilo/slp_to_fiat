@@ -69,7 +69,7 @@ eth = get_rate(breakdown, rates[2])
 
 # output
 with open("slp.txt", "w") as writer:
-    writer.writelines("Current Date and Time: " + datetime.now())
+    writer.writelines("Current Date and Time: " + str(datetime.now()) + "\n")
     for i,j,k,l,m in zip(key, value, php, usd, eth):
         writer.writelines(str(i) + ":\t"
             + str(j) + " SLP = " 
