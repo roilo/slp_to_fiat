@@ -5,6 +5,7 @@
     Please install pycoingecko first.
     Link: https://pypi.org/project/pycoingecko/
 
+    Suggestions:
     [1] Needs a function to check if total percentage is 100%.
 """
 
@@ -96,7 +97,7 @@ def save_text_data(file_name, dictionary):
     """
         Saves processed data into a text file.
     """
-    with open(file_name, "w") as writer:
+    with open(file_name + ".txt", "w") as writer:
         for key in dictionary:
             writer.writelines(key + " " + str(dictionary[key]) + "\n")
 
@@ -104,7 +105,7 @@ def save_slp_data(file_name, key, value, php, usd, eth):
     """
         Saves SLP data into a text file.
     """
-    with open("slp.txt", "w") as writer:
+    with open(file_name + ".txt", "w") as writer:
         writer.writelines("Current Date and Time: "
                           + str(datetime.now()) + "\n")
         for i, j, k, l, m in zip(key, value, php, usd, eth):
@@ -185,12 +186,13 @@ while (is_running):
                 is_adding = False
     elif option == 3:
         if data:
-            text_name = input("File name: info-")
-            save_text_data("info-" + text_name + ".txt", data)
+            text_name = input("File name (no need to add .txt): info-")
+            save_text_data("info-" + text_name, data)
         else:
             print("No input data.\n")
     elif option == 4:
         if data:
+            # display in percentage
             for key in data:
                 print(key + ": " + str(data[key] * 100.00) + "%")
             print()
@@ -206,7 +208,7 @@ while (is_running):
         if data:
             # user inputs
             slp_input = int(input("SLP: "))
-            slp_name = input("File name: ")
+            slp_name = input("File name (no need to add .txt): ")
 
             # access pycoingecko
             cg = CoinGeckoAPI()
