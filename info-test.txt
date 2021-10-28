@@ -1,2 +1,2 @@
-Kuya 0.6
-Roy 0.4
+Manager 0.6
+Scholar 0.4
