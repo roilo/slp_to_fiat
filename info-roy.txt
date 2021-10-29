@@ -1,0 +1,5 @@
+Pay Bills 0.3
+Profit RR 0.3
+Pay Debts 0.1
+EF 0.1
+Profit Roy 0.2

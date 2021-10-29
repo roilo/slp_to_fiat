@@ -32,7 +32,7 @@ def get_keys(dictionary):
     return result
 
 # get value of keys in dictionary
-def get_value(dictionary):
+def get_values(dictionary):
     result = []
     for i in dictionary:
         result.append(dictionary[i])
@@ -62,7 +62,7 @@ for currency in convert:
 # calculate breakdown and get conversion rates
 breakdown = breakdown(slp)
 key = get_keys(breakdown)
-value = get_value(breakdown)
+value = get_values(breakdown)
 php = get_rate(breakdown, rates[0])
 usd = get_rate(breakdown, rates[1])
 eth = get_rate(breakdown, rates[2])
